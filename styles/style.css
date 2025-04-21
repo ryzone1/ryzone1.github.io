@@ -1,0 +1,328 @@
+/* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
+
+.page {
+  display: grid;
+  background-color: var(--background-color, #fdf3f7);
+  font-family: var(--main-font, 'IBM Plex mono'), monospace;
+  font-size: var(--main-font-size, 1.125rem);
+  color: var(--main-text-color, #353430);
+  background-image: var(--background-image, url(../images/cover-image-light.png));
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.make_grid {
+  display: grid;
+}
+
+/* Отступы */
+
+.title_to_article_gap {
+  gap: var(--title_gap, 20px);
+}
+
+.first_last_gap {
+  gap: var(--first_last_section_gap, 40px);
+}
+
+.section_to_section_gap {
+  gap: var(--section_gap, 50px);
+}
+
+.title_to_text_gap {
+  gap: var(--text_gap, 10px);
+}
+
+.gallery_gap {
+  gap: var(--gallery_gap, 10px);
+}
+
+.padding {
+  padding: 0 var(--padding, 10px) 0 var(--padding, 10px);
+}
+
+.header_padding {
+  padding: var(--padding, 10px);
+}
+
+/* Стили для ссылок */
+
+.link {
+  text-shadow: 2px 1px 0 var(--accent-color, #FF8DCB);
+  text-decoration: none;
+}
+
+.link:hover {
+  border-bottom: 1px solid var(--main-text-color, #353430);
+}
+
+.link:focus {
+  outline: none;
+}
+
+.link:focus-visible {
+  border: 1px solid var(--main-text-color, #353430);
+}
+
+/* Хедер и всё что в нем */
+
+.header {
+  block-size: 100svh;
+  min-block-size: 668px;
+  display: grid; 
+  grid-template-columns: 100%; 
+  grid-template-rows: 1fr min-content 1fr; 
+  grid-template-areas: 
+    "theme-menu"
+    "heading"
+    "header_title"; 
+  align-content: center; 
+  justify-items: stretch; 
+  align-items: center;
+}
+
+.decorated-zone {
+  position: relative;
+}
+
+.decorated-zone::before {
+  position: absolute;
+  content: "";
+  top: var(--padding, 10px);
+  right: var(--padding, 10px);
+  width: 25.04px;
+  height: 25px;
+  justify-self: end;
+  border: 1px solid var(--decoration-color, #353430);
+  border-bottom-style: none;
+  border-left-style: none;
+}
+
+.decorated-zone::after {
+  position: absolute;
+  bottom: var(--padding);
+  left: var(--padding);
+  content: "";
+  width: 25.04px;
+  height: 25px;
+  justify-self: start;
+  border: 1px solid var(--decoration-color, #353430);
+  border-top-style: none;
+  border-right-style: none;
+}
+
+.decorate_element {
+  display: none;
+}
+
+.decorate_element::before {
+  position: absolute;
+  content: "REC";
+  top: var(--padding, 10px);
+  right: calc(var(--padding, 10px) + 28px);
+  color: var(--accent-color, #FF8DCB);
+}
+
+.decorate_element::after {
+  position: absolute;
+  content: "";
+  block-size: 9px;
+  inline-size: 9px;
+  background-color: var(--accent-color, #FF8DCB);
+  border-radius: 50%;
+  box-shadow: 0 0 4px 3px var(--accent-color, #FF8DCB);
+  top: calc(var(--padding, 10px) + 8px);
+  right: calc(var(--padding, 10px) + 10px);
+}
+
+.header__theme-menu {
+  grid-area: theme-menu;
+  justify-self: end;
+  align-self: center;
+}
+
+.header__theme-menu-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.header__theme-menu-button {
+  line-height: 1;
+  display: inline-block;
+  min-inline-size: 70px;
+  background-color: transparent;
+  text-transform: lowercase;
+  padding-bottom: 5px;
+  padding-top: 2.6px;
+  color: var(--theme_switcher_color, #32312D);
+  border: none;
+  cursor: pointer;
+  transition: border 0.6s;
+}
+
+.header__theme-menu-button_active {
+  border: 1px solid var(--theme_switcher_color, #32312D);
+  pointer-events: none;
+}
+
+.header__theme-menu-button:hover {
+  border: 1px solid var(--theme_switcher_color_hover, #32312D40);
+}
+
+.header__theme-menu-button:focus {
+  outline: none;
+}
+
+.header__theme-menu-button:focus-visible {
+  border-bottom: 1px solid var(--theme_switcher_color, #32312D);
+}
+
+.header__heading {
+  grid-area: heading;
+  justify-self: start;
+  align-self: center;
+  text-shadow: 4px 4px 0 var(--accent-color, #FF8DCB);
+}
+
+.heading {
+  display: block;
+  font-family: var(--main-font, 'IBM Plex mono'), monospace;
+  font-size: var(--h1-font-size, clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem));
+  color: var(--heading-text-color, #FFC2E6);
+  font-weight: bold;
+  line-height: 82.5%;
+}
+
+.header__title {
+  display: block;
+  grid-area: header_title;
+  font-weight: bold;
+}
+
+/* Заголовки, секции*/
+
+.title-decor {
+  background-color: var(--accent-color, #FF8DCB);
+  color: var(--title-decorated-text-color, #353430);
+}
+
+.content-section {
+  display: grid;
+}
+
+.content-section h2, h3 {
+  font-weight: bold;
+  color: var(--title-text-color, #353430);
+}
+
+.content_container {
+  display: grid;
+}
+
+/* Галерея (если ее можно так назвать, скорее просто блок картинок*/
+
+
+.gallery {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.gallery_image {
+  inline-size: 100%;
+  block-size: 100%;
+  max-block-size: 100%;
+  object-fit: cover;
+}
+
+/* Футер */
+
+.footer {
+  block-size: 100svh;
+  min-block-size: 668px;
+  display: grid; 
+  align-items: center;
+  justify-content: center;
+}
+
+.footer__heading {
+  text-shadow: 2px 2px 0 var(--accent-color, #FF8DCB);
+}
+
+/* Медиазапросы */
+
+@media (min-width: 768px) {
+
+  .header {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 
+      ". theme-menu"
+      "heading heading"
+      ". header_title"; 
+}
+
+  .header__heading {
+    margin-left: calc(var(--padding, 20px) * -1);
+}
+
+  .content-section {
+    grid-template-columns: 1fr 2fr;
+}
+
+
+  .content_container_concentration_down {
+    grid-column: span 3
+  }
+
+  .gallery {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .gallery_image_sunset {
+    grid-column: span 2;
+  }
+
+  .gallery_street {
+    grid-column: span 2;
+  }
+
+  .gallery_image_icecream {
+    grid-row: span 2;
+  }
+
+  .gallery_audiotape {
+    grid-row: span 2;
+  }
+}
+
+@media (min-width: 1024px) {
+  
+  .header {
+    grid-template-areas: 
+    "theme-menu theme-menu"
+    "heading heading"
+    ". header_title"; 
+  }
+
+  .header__theme-menu {
+    justify-self: center;
+    align-self: start;
+  }
+
+  .header__theme-menu-list {
+    flex-direction: row;
+  }
+
+  .content-section {
+    grid-template-columns: 1fr 2.06fr;
+  }
+
+  .content_container__cards {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(min-content, 1fr));
+    justify-content: center;
+  }
+
+}
