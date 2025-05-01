@@ -1,1 +1,0 @@
-https://github.com/ryzone1/slozhno-sosredotochitsya-fd.git
