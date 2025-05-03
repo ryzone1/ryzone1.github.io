@@ -22,6 +22,7 @@
   gap: var(--header_cards_gap); /*везде потом добавить фоллбеки*/
   justify-items: center;
   font-variation-settings: "wght" var(--text_weight);
+  background-image: var(--background_gradient);
 }
 
 .filter_grayscale {
@@ -225,6 +226,14 @@
     padding-block-start: 10px;
   }
 
+  .card__icon-button:focus {
+    outline: none;
+  }
+
+  .card__icon-button:focus-visible > .button__text {
+    box-shadow: 2px 2px 0 var(--accent_color);
+  }
+
   .button__text:hover {
     color: var(--main_color);
   }
@@ -238,6 +247,14 @@
     gap: var(--button_gap);
     align-items: center;
     justify-content: center;
+  }
+
+  .button_save:focus {
+    outline: none;
+  }
+
+  .button_save:focus-visible {
+    box-shadow: 2px 2px 0 var(--accent_color);
   }
 
   .button_save:hover {
@@ -304,6 +321,14 @@
     inline-size: 100%;
     padding-top: 3%;
     padding-bottom: 3%;
+  }
+
+  .close-button:focus {
+    outline: none;
+  }
+
+  .close-button:focus-visible {
+    box-shadow: 2px 2px 0 var(--accent_color);
   }
 
   .close-button:hover {

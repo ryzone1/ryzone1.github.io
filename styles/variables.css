@@ -56,7 +56,12 @@
     --decoration_text_color: rgba(0, 0, 0, 0.5);
     --decoration_text_stroke: rgba(255, 255, 255, 0.5);
     --button_hover_color: rgb(0, 0, 0);
+    /*Разное */
     --button_save_direction: row;
+    --background_gradient: 
+        repeating-linear-gradient(to right, rgb(211, 211, 211) 0 2px, rgba(211, 211, 211, 0) 2px 4px), 
+        repeating-linear-gradient(to bottom, rgb(211, 211, 211) 0 2px, rgba(211, 211, 211, 0) 2px 4px),
+        linear-gradient(to bottom, #e7e7e7 0.01%, #1a1a1a );
 }
 
     @media (width <= 376px) {
